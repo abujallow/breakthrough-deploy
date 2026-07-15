@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breakthrough — Recurring Back-Office Reporting for Small Service Businesses</title>
+<meta name="description" content="A working demonstration of a recurring back-office reporting system for small service businesses, built for Ferrous Home Services, a fictional plumbing & HVAC contractor.">
+<style>
+  :root {
+    --ink: #1a2332;
+    --ink-soft: #4a5568;
+    --paper: #fbfaf7;
+    --panel: #ffffff;
+    --accent: #1f4e5f;
+    --accent-light: #2f7a8c;
+    --line: #e2e0d8;
+    --warn-bg: #fff6e5;
+    --warn-border: #e8b84b;
+    --good-bg: #eef7f1;
+    --good-border: #4a9d6f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+  }
+  header.hero {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+    color: #fff;
+    padding: 72px 24px 64px;
+    text-align: center;
+  }
+  header.hero .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 14px;
+  }
+  header.hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    margin: 0 0 18px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  header.hero p.sub {
+    max-width: 680px;
+    margin: 0 auto 32px;
+    font-size: 19px;
+    opacity: 0.95;
+  }
+  .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary { background: #fff; color: var(--accent); }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+  .btn-secondary { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.4); }
+  .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+
+  main { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  h2 { font-size: 28px; margin: 0 0 8px; letter-spacing: -0.01em; }
+  h2 .num { color: var(--accent-light); font-weight: 700; margin-right: 10px; }
+  p.lede { color: var(--ink-soft); font-size: 17px; max-width: 720px; margin: 0 0 28px; }
+
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 16px; color: var(--accent); }
+  .card p { margin: 0; font-size: 14.5px; color: var(--ink-soft); }
+
+  ol.workflow, ul.plain { padding-left: 0; list-style: none; }
+  ol.workflow li {
+    display: flex; gap: 16px; padding: 16px 0; border-top: 1px solid var(--line);
+  }
+  ol.workflow li:first-child { border-top: none; }
+  .step-num {
+    flex: none; width: 34px; height: 34px; border-radius: 50%;
+    background: var(--accent); color: #fff; display: flex; align-items: center;
+    justify-content: center; font-weight: 700; font-size: 14px;
+  }
+  .step-body strong { display: block; margin-bottom: 3px; }
+  .step-body span { color: var(--ink-soft); font-size: 14.5px; }
+
+  .reports-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  .report-card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px;
+  }
+  .report-card .tag {
+    display: inline-block; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--accent); background: #eaf2f2; padding: 3px 9px; border-radius: 999px; margin-bottom: 10px;
+  }
+  .report-card h3 { margin: 0 0 8px; font-size: 17px; }
+  .report-card p { margin: 0; font-size: 14.5px; color: var(--ink-soft); }
+
+  .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 16px; }
+  .metric { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 20px; text-align: center; }
+  .metric .value { font-size: 28px; font-weight: 700; color: var(--accent); }
+  .metric .label { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+  .metric-note {
+    background: var(--good-bg); border: 1px solid var(--good-border); border-radius: 8px;
+    padding: 14px 18px; font-size: 14px; color: #2f5940;
+  }
+
+  .boundary-box {
+    background: var(--warn-bg); border: 1px solid var(--warn-border); border-radius: 10px; padding: 20px 24px;
+  }
+  .boundary-box h3 { margin: 0 0 10px; font-size: 16px; color: #7a5a12; }
+  .boundary-box ul { margin: 0; padding-left: 20px; color: #5c4a1e; font-size: 14.5px; }
+  .boundary-box li { margin-bottom: 6px; }
+
+  .synthetic-banner {
+    background: #1a2332; color: #fff; border-radius: 12px; padding: 24px 28px; display: flex;
+    align-items: center; gap: 18px; flex-wrap: wrap;
+  }
+  .synthetic-banner .icon { font-size: 28px; }
+  .synthetic-banner p { margin: 0; font-size: 15px; opacity: 0.92; }
+
+  footer {
+    padding: 40px 24px 60px; text-align: center; color: var(--ink-soft); font-size: 13.5px;
+  }
+  footer a { color: var(--accent); }
+  code { background: #f0efe9; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="eyebrow">Working Demonstration — Not a Live Business System</div>
+  <h1>Breakthrough</h1>
+  <p class="sub">
+    A recurring back-office reporting service that turns a small business's messy spreadsheets
+    into a clean, accurate, decision-ready monthly report — automatically, every month.
+  </p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="STREAMLIT_APP_URL_PLACEHOLDER" id="demo-link">Open the Live Demo →</a>
+    <a class="btn btn-secondary" href="#problem">See How It Works</a>
+  </div>
+</header>
+
+<main>
+
+  <section id="problem">
+    <h2><span class="num">01</span>The Problem</h2>
+    <p class="lede">
+      Small service businesses run on spreadsheets — job logs, invoice exports, vendor purchase
+      records, time sheets. The data isn't missing. It's fragmented, inconsistent, and someone has
+      to manually rebuild the same report every single month, by hand, from scratch.
+    </p>
+    <div class="grid-3">
+      <div class="card"><h3>Fragmented</h3><p>Six or more separate files, each maintained differently, none of them talking to each other.</p></div>
+      <div class="card"><h3>Inconsistent</h3><p>The same vendor, customer, or category entered a different way every time.</p></div>
+      <div class="card"><h3>Repetitive</h3><p>The exact same manual reconciliation, redone from zero every month.</p></div>
+    </div>
+  </section>
+
+  <section id="scenario">
+    <h2><span class="num">02</span>The Demonstration Scenario</h2>
+    <p class="lede">
+      <strong>Ferrous Home Services</strong> is a fictional single-location residential plumbing &amp;
+      HVAC contractor with 4–6 technicians, roughly 70–80 jobs a month. Each month, the office
+      manager currently has to open and cross-reference six files by hand:
+    </p>
+    <div class="grid-3">
+      <div class="card"><h3>Job Log</h3><p>Every job — customer, service type, technician, dates, status.</p></div>
+      <div class="card"><h3>Invoice Export</h3><p>Every invoice issued, sometimes missing or mismatched job references.</p></div>
+      <div class="card"><h3>Vendor Purchase Export</h3><p>Parts and materials costs, often not tied back to a job.</p></div>
+      <div class="card"><h3>Technician Time Log</h3><p>Hours per technician, per job, per day.</p></div>
+      <div class="card"><h3>Customer List</h3><p>Customer names and contact info — with real-world near-duplicates.</p></div>
+      <div class="card"><h3>Payment Status File</h3><p>Payments received, occasionally applied to the wrong invoice.</p></div>
+    </div>
+  </section>
+
+  <section id="workflow">
+    <h2><span class="num">03</span>The Repeatable Workflow</h2>
+    <p class="lede">The same six-step process runs every month, on any new set of files, without being rebuilt.</p>
+    <ol class="workflow">
+      <li><div class="step-num">1</div><div class="step-body"><strong>Intake &amp; Validation</strong><span>Every file is checked for required columns, valid dates, and valid amounts. Bad rows are rejected with a logged reason — never silently dropped.</span></div></li>
+      <li><div class="step-num">2</div><div class="step-body"><strong>Standardization</strong><span>Service categories and job statuses are mapped to a fixed list. Anything that doesn't map is flagged, never guessed.</span></div></li>
+      <li><div class="step-num">3</div><div class="step-body"><strong>Canonicalization</strong><span>Customer, vendor, and technician name variants are matched to one identity — conservatively. Ambiguous matches are flagged for a human, never silently merged.</span></div></li>
+      <li><div class="step-num">4</div><div class="step-body"><strong>Reconciliation</strong><span>Jobs matched to invoices, invoices to payments, purchases to jobs — across every file, automatically.</span></div></li>
+      <li><div class="step-num">5</div><div class="step-body"><strong>Business Rules</strong><span>Revenue, cost, margin, overdue status, and data-quality flags are calculated using documented, auditable definitions.</span></div></li>
+      <li><div class="step-num">6</div><div class="step-body"><strong>Reporting</strong><span>Four reports come out the other end automatically — every time, from any new month's files.</span></div></li>
+    </ol>
+  </section>
+
+  <section id="reports">
+    <h2><span class="num">04</span>The Reports Produced</h2>
+    <div class="reports-grid">
+      <div class="report-card"><span class="tag">Owner-Facing</span><h3>Executive Monthly Summary</h3><p>Revenue, payments collected, outstanding receivables, costs, margin, overdue jobs, and month-over-month comparisons — one page.</p></div>
+      <div class="report-card"><span class="tag">Operational</span><h3>Detailed Operations Report</h3><p>Every job, with its invoice status, payment status, allocated cost, profitability estimate, and any exception flags.</p></div>
+      <div class="report-card"><span class="tag">Review Queue</span><h3>Exception Report</h3><p>Every duplicate, unmatched record, unknown category, misapplied payment, and outlier — flagged for a human to confirm.</p></div>
+      <div class="report-card"><span class="tag">Audit Trail</span><h3>Data Quality Report</h3><p>Every source file, reconciled — raw rows in equal accepted plus rejected out, every time.</p></div>
+    </div>
+  </section>
+
+  <section id="value">
+    <h2><span class="num">05</span>Measurable Value — From This Demo</h2>
+    <p class="lede">
+      These numbers come directly from this demonstration's own two-month run — not from an
+      industry survey or a marketing claim.
+    </p>
+    <div class="metrics-grid">
+      <div class="metric"><div class="value">151</div><div class="label">Jobs processed across 2 months</div></div>
+      <div class="metric"><div class="value">166</div><div class="label">Exceptions caught and flagged for review</div></div>
+      <div class="metric"><div class="value">6 → 6</div><div class="label">Canonical vendors — stable across the refresh</div></div>
+      <div class="metric"><div class="value">100%</div><div class="label">Source records reconciled (in = accepted + rejected)</div></div>
+    </div>
+    <div class="metric-note">
+      The system's headline financial totals were independently verified three separate ways in
+      testing — the pipeline, a standalone recomputation script, and an Excel spreadsheet — and
+      agreed to the cent. See the live demo's "Data Quality" tab for the full reconciliation.
+    </div>
+  </section>
+
+  <section id="boundaries">
+    <h2><span class="num">06</span>System Boundaries — What This Does <em>Not</em> Claim</h2>
+    <div class="boundary-box">
+      <h3>Please read before drawing conclusions from this demo</h3>
+      <ul>
+        <li>This system does not guarantee legal, tax, or financial-statement compliance.</li>
+        <li>It does not replace a CPA, bookkeeper, or attorney.</li>
+        <li>It does not eliminate all errors — it flags what it can't confidently resolve, for a human to review.</li>
+        <li>It has not yet been validated against a real business's actual data or workflow.</li>
+        <li>This deployment is a demonstration only — it is not connected to any real business system.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="synthetic">
+    <h2><span class="num">07</span>A Note on the Data</h2>
+    <div class="synthetic-banner">
+      <div class="icon">🔒</div>
+      <p>
+        <strong>Every record in this demonstration is synthetic and fictional</strong>, generated
+        with a seeded random process for reproducibility. No real business, customer, vendor, or
+        employee data appears anywhere in this demo or its underlying source code.
+      </p>
+    </div>
+  </section>
+
+  <section id="try-it" style="text-align:center;">
+    <h2 style="justify-content:center; display:flex;"><span class="num">08</span>See It For Yourself</h2>
+    <p class="lede" style="margin-left:auto; margin-right:auto; text-align:center;">
+      Open the live application to explore all four reports, or upload a new month's files
+      yourself and watch the refresh happen in real time.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" style="background:var(--accent); color:#fff;" href="STREAMLIT_APP_URL_PLACEHOLDER">Open the Live Demo →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Breakthrough is an independent proof-of-concept project. Not affiliated with, and does not use data from, any employer or client engagement.</p>
+  <p>Built with Python, pandas, and Streamlit. Deployed on free infrastructure. Source available on request.</p>
+</footer>
+
+</body>
+</html>

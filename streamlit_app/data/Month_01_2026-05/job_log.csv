@@ -1,0 +1,72 @@
+JobID,RawCustomerName,ServiceTypeRaw,TechnicianRawName,LocationArea,OpenDate,CloseDate,StatusRaw
+JOB-1001,Daniel Moore,Water Heater Service,R. Chen,North,2026-05-08,,OPEN
+JOB-1002,Jennifer White,HVAC Repair,TYLER BROOKS,West,"May 29, 2026",2026-06-04,completed
+JOB-1003,Kimberly Wilson,Plumbing Installation,T. Brooks,East,05/25/2026,2026-05-27,Closed
+JOB-1004,Linda Carter,Water Heater Service,dana ortiz,East,2026-05-25,06/03/2026,Completed
+JOB-1005,Betty King,Plumbing Installation,tyler brooks,South,"May 5, 2026","May 14, 2026",completed
+JOB-1006,Sandra Johnson,Plumbing Repair,RAY CHEN,North,"May 17, 2026",05/28/2026,COMPLETE
+JOB-1007,Mark Carter,Plumbing Installation,DANA ORTIZ,South,2026-05-07,2026-05-10,COMPLETE
+JOB-1008,Michael Wilson,HVAC Maintenance,marcus webb,West,2026-05-09,,In Progress
+JOB-1009,Daniel Miller,Plumbing Installation,Dana Ortiz,West,"May 4, 2026",,open
+JOB-1010,Michael Scott,HVAC Installation,D. Ortiz,East,2026-05-13,05/24/2026,Closed
+JOB-1011,Michael Wilson,Emergency Service,Tyler Brooks,East,"May 20, 2026","May 25, 2026",CANCELLED
+JOB-1012,Michael Scott,HVAC Repair,Tyler Brooks,West,"May 9, 2026",,Open
+JOB-1013,William Wilson,HVAC Repair,Ray Chen,North,2026-05-29,"Jun 5, 2026",completed
+JOB-1014,Robert Torres,Water Heater Service,priya patel,East,"May 9, 2026",,OPEN
+JOB-1015,Karen Harris,Plumbing Repair,priya patel,North,2026-05-17,,open
+JOB-1016,Robert Hill,HVAC Repair,PRIYA PATEL,East,2026-05-13,,open
+JOB-1017,Nancy Garcia,HVAC Installation,Marcus Webb,South,05/22/2026,05/26/2026,completed
+JOB-1018,Barbara Smith,Emergency Service,T. Brooks,Central,05/20/2026,"May 28, 2026",COMPLETE
+JOB-1019,Joseph Johnson,HVAC Installation,Tyler Brooks,West,"May 14, 2026",2026-05-21,COMPLETE
+JOB-1020,Linda Garcia,Plumbing Repair,Marcus Webb,West,2026-05-05,,open
+JOB-1021,James Allen,Plumbing Repair,TYLER BROOKS,South,2026-05-08,"May 19, 2026",Completed
+JOB-1022,Robert Young,Plumbing Installation,Tyler Brooks,South,"May 4, 2026",,OPEN
+JOB-1023,Patricia Adams,HVAC Installation,P. Patel,South,2026-05-14,2026-05-23,Closed
+JOB-1024,Karen Davis,HVAC Repair,TYLER BROOKS,North,"May 17, 2026",,Open
+JOB-1025,Steven King,HVAC Installation,RAY CHEN,West,2026-05-09,05/13/2026,Completed
+JOB-1026,Barbara Smith,HVAC Repair,Marcus Webb,North,05/18/2026,"May 21, 2026",COMPLETE
+JOB-1027,James Walker,HVAC Maintenance,T. Brooks,Central,2026-05-26,2026-06-04,COMPLETE
+JOB-1028,Jennifer Torres,Emergency Service,M. Webb,South,05/30/2026,"Jun 5, 2026",completed
+JOB-1029,Linda Carter,Emergency Service,priya patel,North,05/20/2026,05/27/2026,Closed
+JOB-1030,Ashley Davis,Plumbing Installation,D. Ortiz,East,"May 14, 2026",,OPEN
+JOB-1031,Linda Garcia,Plumbing Repair,T. Brooks,West,"May 14, 2026",2026-05-23,Closed
+JOB-1032,Robert Hill,Plumbing Repair,Tyler Brooks,West,"May 3, 2026",05/05/2026,COMPLETE
+JOB-1033,Paul Davis,HVAC Maintenance,ray chen,Central,"May 9, 2026",,OPEN
+JOB-1034,Joseph Johnson,Plumbing Repair,R. Chen,West,"May 23, 2026",,In Progress
+JOB-1035,Robert Garcia,Plumbing Installation,priya patel,East,"May 11, 2026","May 18, 2026",Completed
+JOB-1036,Patricia Allen,Drain Cleaning,ray chen,North,2026-05-02,2026-05-03,Closed
+JOB-1037,William Green,HVAC Repair,Marcus Webb,West,2026-05-29,2026-06-05,completed
+JOB-1038,Patricia Miller,Plumbing Repair,TYLER BROOKS,West,"May 27, 2026",,OPEN
+JOB-1039,Betty Torres,HVAC Repair,ray chen,West,05/06/2026,2026-05-15,Closed
+JOB-1040,Betty King,HVAC Installation,MARCUS WEBB,South,"May 16, 2026",05/25/2026,Closed
+JOB-1041,Joseph Johnson,Drain Cleaning,Priya Patel,North,"May 27, 2026",2026-06-03,Closed
+JOB-1042,Nancy Garcia,Water Heater Service,TYLER BROOKS,North,"May 2, 2026",,open
+JOB-1043,Robert Garcia,Drain Cleaning,TYLER BROOKS,East,05/26/2026,2026-06-05,Completed
+JOB-1044,Linda Carter,Plumbing Installation,priya patel,Central,2026-05-08,,Open
+JOB-1045,Daniel Miller,Drain Cleaning,M. Webb,South,"May 9, 2026","May 19, 2026",Closed
+JOB-1046,David Miller,Drain Cleaning,P. Patel,North,05/03/2026,,Open
+JOB-1047,Karen Brown,HVAC Repair,TYLER BROOKS,East,"May 12, 2026",2026-05-21,completed
+JOB-1048,Daniel Moore,Plumbing Repair,dana ortiz,East,05/23/2026,,OPEN
+JOB-1049,Michael Wilson,HVAC Installation,Ray Chen,East,05/25/2026,,Open
+JOB-1050,Ashley Adams,Emergency Service,Tyler Brooks,East,05/02/2026,2026-05-12,Completed
+JOB-1051,Jennifer Torres,Plumbing Repair,P. Patel,North,"May 15, 2026",,OPEN
+JOB-1052,Mark White,Water Heater Service,ray chen,South,2026-05-03,"May 5, 2026",completed
+JOB-1053,Maria Wright,HVAC Installation,ray chen,South,"May 15, 2026",05/23/2026,Closed
+JOB-1054,Patricia Allen,Water Heater Service,Ray Chen,Central,2026-05-16,"May 17, 2026",COMPLETE
+JOB-1055,Daniel Miller,Plumbing Repair,ray chen,North,2026-05-11,"May 22, 2026",COMPLETE
+JOB-1056,Betty Torres,HVAC Repair,Tyler Brooks,West,"May 21, 2026",,open
+JOB-1057,Mark White,Drain Cleaning,T. Brooks,West,05/05/2026,2026-05-17,completed
+JOB-1058,Betty King,Water Heater Service,tyler brooks,South,"May 28, 2026",06/05/2026,COMPLETE
+JOB-1059,Karen Brown,HVAC Maintenance,TYLER BROOKS,East,05/08/2026,2026-05-10,Closed
+JOB-1060,Maria Torres,Emergency Service,TYLER BROOKS,North,"May 29, 2026","Jun 3, 2026",completed
+JOB-1061,Charles Allen,Plumbing Installation,Tyler Brooks,East,2026-05-03,2026-05-07,CANCELLED
+JOB-1062,Edward Young,HVAC Installation,D. Ortiz,North,"May 12, 2026",2026-05-23,completed
+JOB-1063,Betty King,Emergency Service,Ray Chen,North,"May 25, 2026",2026-05-30,Closed
+JOB-1064,Thomas King,HVAC Maintenance,marcus webb,West,2026-05-20,05/21/2026,CANCELLED
+JOB-1065,Patricia Allen,Plumbing Repair,R. Chen,Central,2026-05-14,"May 15, 2026",Completed
+JOB-1066,William Wilson,Drain Cleaning,priya patel,East,2026-05-12,2026-05-14,completed
+JOB-1067,Charles Allen,Emergency Service,marcus webb,East,05/22/2026,"May 24, 2026",Closed
+JOB-1068,Robert Hill,HVAC Maintenance,PRIYA PATEL,Central,2026-05-14,,Open
+JOB-1069,Patricia Miller,HVAC Maintenance,Tyler Brooks,North,06/06/2026,,Open
+JOB-1070,Thomas Young,TBD,Ray Chen,West,05/08/2026,,Open
+JOB-1071,Mark Carter,HVAC Maintenance,Ray Chen,West,05/03/2026,,On Hold

@@ -1,0 +1,13 @@
+EntityType,RawNameOrAlias,CanonicalID,CanonicalName,Note
+Vendor,HD Pro Supply,VEND-01,Home Depot Pro,Abbreviation the automatic matcher cannot resolve with confidence; manually confirmed same vendor as Home Depot during Month 1 review.
+Vendor,Home Depot,VEND-01,Home Depot Pro,Seeds the canonical vendor name explicitly so match order cannot split it into two entities.
+Technician,Ray Chen,TECH-01,Ray Chen,Known staff roster seeded at system setup so abbreviated timesheet entries (R. Chen) resolve cleanly from Month 1 onward.
+Technician,R. Chen,TECH-01,Ray Chen,Abbreviated form used in some timesheet exports; confirmed same technician as Ray Chen.
+Technician,Tyler Brooks,TECH-02,Tyler Brooks,Known staff roster seeded at system setup.
+Technician,T. Brooks,TECH-02,Tyler Brooks,Abbreviated form used in some timesheet exports; confirmed same technician as Tyler Brooks.
+Technician,Dana Ortiz,TECH-03,Dana Ortiz,Known staff roster seeded at system setup.
+Technician,D. Ortiz,TECH-03,Dana Ortiz,Abbreviated form used in some timesheet exports; confirmed same technician as Dana Ortiz.
+Technician,Marcus Webb,TECH-04,Marcus Webb,Known staff roster seeded at system setup.
+Technician,M. Webb,TECH-04,Marcus Webb,Abbreviated form used in some timesheet exports; confirmed same technician as Marcus Webb.
+Technician,Priya Patel,TECH-05,Priya Patel,Known staff roster seeded at system setup.
+Technician,P. Patel,TECH-05,Priya Patel,Abbreviated form used in some timesheet exports; confirmed same technician as Priya Patel.
